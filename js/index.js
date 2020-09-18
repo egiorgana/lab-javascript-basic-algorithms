@@ -1,84 +1,37 @@
 // Iteration 1: Names and Input
-const hacker1 = "Eliher";
-console.log("The driver's name is " + hacker1);
+const hacker1 = 'Eliher'
+console.log(`The driver's name is ${hacker1}`)
 
-const hacker2 = "Luis";
-console.log("The navigator's name is " + hacker2);
+const hacker2 = 'Alejandro'
+console.log(`The navigator's name is ${hacker2}`)
 
 // Iteration 2: Conditionals
 if(hacker1.length > hacker2.length){
     console.log(`The driver has the longest name, it has ${hacker1.length} characters.`)
-  }else if(hacker2.length > hacker1.length){
+  }else if(hacker1.length < hacker2.length){
     console.log(`It seems that the navigator has the longest name, it has ${hacker2.length} characters.`)
   }else{
     console.log(`Wow, you both have equally long names, ${hacker1.length} characters!`)
 }
 
 // Iteration 3: Loops
-let driver = hacker1;
-let name = "";
-for(let i = 0; i < driver.length; i++){
-  name = name + driver[i] + " ";
-}
-console.log(name.toUpperCase());
+console.log(hacker1.split('').join(' ').toUpperCase())
+console.log(hacker2.split('').reverse().join(''))
 
-//
-let navigator = hacker2;
-let reversedName = "";
-for(let i = 0; i < navigator.length; i++){
-  reversedName = navigator[i] + reversedName;
-}
-console.log(reversedName);
-
-// Done with a Function 
-/* function reverseString(str) {
-    return str.split("").reverse().join("");
-}
-console.log(reverseString(hacker2));
-*/
-
-let n = hacker1.localeCompare(hacker2);
-
-switch(n){
-  case -1:
-    console.log("The driver's name goes first.");
-    break;
-  case 1:
-    console.log("Yo, the navigator goes first definitely.");
-    break;
-  case 0:
-    console.log("What?! You both have the same name?");
-    break;
+if(hacker1.localeCompare(hacker2) === 1){
+    console.log(`Yo, the navigator goes first definitely.`)
+  }else if(hacker2.localeCompare(hacker1) === -1){
+    console.log(`The driver's name goes first.`)
+  }else{
+    console.log(`What?! You both have the same name?`)
 }
 
-//Bonus 1 
-let paragraphs = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ullamcorper consectetur odio, sit amet suscipit enim gravida sed. Ut pulvinar libero a turpis commodo, eu auctor augue placerat. Fusce semper dui sit amet enim faucibus, ac rutrum nisi facilisis. Proin tempus, mauris non convallis blandit, lectus leo gravida massa, vel pharetra dui augue a felis. Mauris tincidunt efficitur odio. Praesent dictum tortor sed justo viverra eleifend. Pellentesque nulla ipsum, ullamcorper et ultrices et, ornare ac ipsum. Praesent molestie pulvinar ex nec convallis. Nulla nec pharetra ante. Sed tempor sagittis sem nec congue.
+// Bonus 1:
+let text = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor consectetur ante, id commodo ipsum cursus non. Aliquam in est nibh. Nunc quis iaculis enim. Curabitur pharetra mauris vel lacus tristique egestas vitae vel urna. Phasellus commodo vel massa non mattis. Nunc semper convallis quam, ut tincidunt elit varius laoreet. In hac habitasse platea dictumst. In ut nisl turpis. Aenean gravida tellus finibus turpis rutrum, bibendum semper lorem faucibus. Nam at euismod urna.
+Donec lacinia tempus dui quis luctus. Pellentesque luctus odio id enim scelerisque tristique ut quis erat. Integer scelerisque vehicula ante, non ultrices justo placerat non. Nam purus velit, pulvinar vitae felis in, porta egestas risus. Morbi id mattis dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque faucibus eu ipsum vitae dictum. Nunc est ligula, varius sagittis eros vel, egestas faucibus lacus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed vitae sagittis nibh. Nam vel sollicitudin lacus. Ut at urna pellentesque, tincidunt eros eu, ultrices purus. Nulla ut justo nec mi scelerisque laoreet.
+Aliquam pulvinar mauris nunc, sit amet vehicula metus hendrerit vel. Suspendisse luctus nulla ex, ut fringilla odio accumsan a. Duis est nibh, ultricies eu ipsum accumsan, auctor maximus enim. Integer ac erat placerat, sagittis nibh nec, tempus mauris. Nam ut erat sagittis, lacinia purus eu, pharetra purus. Donec eget faucibus elit. Praesent gravida aliquam sapien, a eleifend leo convallis ultrices. Ut neque leo, tristique quis elit vel, eleifend laoreet urna. Sed felis nunc, semper vel tortor vitae, cursus vulputate lectus. Aenean at lectus elementum, interdum lectus nec, tempus nisi. Aenean quis dui arcu. Morbi quis velit volutpat, eleifend justo id, pulvinar leo. Aliquam at diam nunc.`
 
-Ut et ante gravida, molestie nibh ut, volutpat tortor. Nunc venenatis eget lectus quis semper. Nulla facilisi. Duis eleifend, lacus vitae convallis cursus, lorem erat fermentum quam, a ornare libero purus iaculis ex. Donec id sollicitudin velit, ac convallis odio. Suspendisse non erat ultrices, dapibus metus ut, sagittis nulla. Quisque vestibulum, ex id pulvinar interdum, lacus erat porta massa, sollicitudin aliquam nisl quam sagittis est. Mauris malesuada, lorem cursus finibus finibus, justo ligula venenatis magna, sed aliquet felis ligula sed velit. Quisque dapibus, sem a cursus imperdiet, justo massa tristique augue, a maximus sapien neque tempor orci.
+console.log(`The number of words is ${text.split(' ').length}`)
 
-Nunc elementum imperdiet augue nec varius. Sed nunc risus, malesuada non tincidunt quis, dapibus quis libero. Aenean aliquam, purus nec dictum congue, dui mauris luctus mauris, a feugiat neque ligula ut arcu. Integer vitae tincidunt enim, egestas varius risus. Nulla non mi vitae augue hendrerit fermentum. Proin vitae sem ac risus tempus auctor. Aenean in porttitor leo. Donec metus urna, malesuada sit amet commodo quis, aliquam eget sem. Cras tristique eget tortor at varius. Aliquam ac pretium dui. Morbi facilisis convallis ex. Sed ut molestie leo. Nullam sed erat sed mauris pharetra consectetur eget et dolor. Aenean suscipit vehicula odio, vel euismod velit mollis quis. Maecenas eu turpis non quam rutrum ornare. Suspendisse potenti.`
-
-let words = paragraphs.split(" ");
-console.log("Paragraph has " + words.length + " words.");
-
-let counter = 0;
-for(let i = 0; i < words.length; i++){
-  if(words[i] == "et"){
-    counter += 1;
-  }
-}
-console.log(counter);
-
-//Bonus 2
-let phraseToCheck = "stack cats";
-let reversePhrase = "";
-phraseToCheck = phraseToCheck.replace(" ", "");
-for(let i = 0; i < phraseToCheck.length; i++){
-  reversePhrase = phraseToCheck[i] + reversePhrase;
-}
-
-if(phraseToCheck == reversePhrase){
-  console.log("Same");
-}else{
-  console.log("Different");
-}
+const count = (text.match(/et/g)).length
+console.log(count)
